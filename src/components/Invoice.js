@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const invoices = [
   {
@@ -48,53 +49,53 @@ const invoices = [
   }
 ];
 
-export default function Invoice() {
+export default function Invoice(props) {
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-        <a className="navbar-brand" href="#">Invoice App</a>
+        <Link className="navbar-brand" to="/">Invoice App</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item active">
-              <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="#">All Invoices</a>
+              <Link className="nav-link" to="/">All Invoices</Link>
             </li>
             {/* <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Status
-              </a>
+              </Link>
               <ul class="dropdown-menu">
-                <li><a className="dropdown-item" href="#">All</a></li>
-                <a className="dropdown-item" href="#">Closed</a>
-                <a className="dropdown-item" href="#">Rejected</a>
-                <a className="dropdown-item" href="#">Approved</a>
+                <li><Link className="dropdown-item" to="/">All</Link></li>
+                <Link className="dropdown-item" to="/">Closed</Link>
+                <Link className="dropdown-item" to="/">Rejected</Link>
+                <Link className="dropdown-item" to="/">Approved</Link>
               </ul>
             </li> */}
              <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           All Status
-          </a>
+          </Link>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">All</a></li>
-            <li><a class="dropdown-item" href="#">Closed</a></li>
-            <li><a class="dropdown-item" href="#">Rejected</a></li>
-            <li><a class="dropdown-item" href="#">Approved</a></li>
+            <li><Link class="dropdown-item" to="/">All</Link></li>
+            <li><Link class="dropdown-item" to="/">Closed</Link></li>
+            <li><Link class="dropdown-item" to="/">Rejected</Link></li>
+            <li><Link class="dropdown-item" to="/">Approved</Link></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
           Select
-          </a>
+          </Link>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">All</a></li>
-            <li><a class="dropdown-item" href="#">Closed</a></li>
-            <li><a class="dropdown-item" href="#">Rejected</a></li>
-            <li><a class="dropdown-item" href="#">Approved</a></li>
+            <li><Link class="dropdown-item" to="/">All</Link></li>
+            <li><Link class="dropdown-item" to="/">Closed</Link></li>
+            <li><Link class="dropdown-item" to="/">Rejected</Link></li>
+            <li><Link class="dropdown-item" to="/">Approved</Link></li>
             </ul>
             </li>
             <li className="nav-item">
@@ -107,10 +108,10 @@ export default function Invoice() {
             <button className="btn btn-primary">+ Direct Invoice</button>
             </li>
             <li className="mb-2 mb-2">
-            <button className="btn btn-primary">+Invoice For Grn</button>
+            <button className="btn btn-primary">+ Invoice For Grn</button>
             </li>
             <li className="nav-item mb-3">
-            <button className="btn btn-primary">+Invoice For IB</button>
+            <button className="btn btn-primary">+ Invoice For IB</button>
             </li>
           </ul>
         </div>
@@ -146,7 +147,7 @@ export default function Invoice() {
                         <td>{invoice.invoiceAmount}</td>
                         <td>{invoice.status}</td>
                         <td>
-                          <button className="btn btn-primary btn-sm">View</button>
+                          <button className="btn btn-primary btn-sm"><Link className="nav-link" to ="/View">View</Link></button>
                           <button className="btn btn-success btn-sm">Payment</button>
                         </td>
                       </tr>
