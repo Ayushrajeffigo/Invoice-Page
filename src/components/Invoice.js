@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 const invoices = [
   {
     supplierInvoiceDate: '03/01/2024',
