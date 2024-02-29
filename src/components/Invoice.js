@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Border from './Border';
+import UpperBorder from './UpperBorder';
+import Footer from './Footer';
 const invoices = [
   {
     supplierInvoiceDate: '03/01/2024',
@@ -50,7 +53,32 @@ const invoices = [
 
 export default function Invoice(props) {
   return (
-    <div>
+    <>
+     <div >
+      <UpperBorder/>
+    </div>
+    <div><Border/></div>
+   
+    
+    <div style={{
+      /* Frame 1000005186 */
+
+position: "absolute",
+width: "1280px",
+height: "900px",
+left: "128px",
+top: "182px",
+
+/* White */
+backgroundColor: "#FFFFFF",
+mixBlendMode: "normal",
+/* 123 */
+boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.02)",
+borderRadius: "12px"
+
+
+    }}>
+     
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <Link className="navbar-brand" to="/">Invoice App</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -159,5 +187,7 @@ export default function Invoice(props) {
         </div>
       </div>
     </div>
+    <Footer/>
+</>
   );
 }
