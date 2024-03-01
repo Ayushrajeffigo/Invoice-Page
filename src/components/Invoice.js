@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Border from './Border';
 import UpperBorder from './UpperBorder';
 import Footer from './Footer';
+import GlowingCircleIcon from './GlowingCircleIcon';
 const invoices = [
   {
     supplierInvoiceDate: '03/01/2024',
@@ -64,13 +65,13 @@ export default function Invoice(props) {
       /* Frame 1000005186 */
 
 position: "absolute",
-width: "1280px",
+width: "100vw",
 height: "900px",
 left: "128px",
 top: "182px",
 
 /* White */
-backgroundColor: "#FFFFFF",
+backgroundColor:"white",
 mixBlendMode: "normal",
 /* 123 */
 boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.02)",
@@ -79,7 +80,7 @@ borderRadius: "12px"
 
     }}>
      
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light nav " >
         <Link className="navbar-brand" to="/">Invoice App</Link>
         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
@@ -132,13 +133,13 @@ borderRadius: "12px"
               </div>
             </li>
             <li className="nav-item mb-1">
-            <button className="btn btn-primary">+ Direct Invoice</button>
+            <button className="btn  my-1" style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Direct Invoice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<GlowingCircleIcon/>}</button>
             </li>
             <li className="mb-2 mb-2">
-            <button className="btn btn-primary">+ Invoice For Grn</button>
+            <button className="btn btn-primary mx-3 my-1"  style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Invoice For Grn &nbsp;{<GlowingCircleIcon/>}</button>
             </li>
             <li className="nav-item mb-3">
-            <button className="btn btn-primary">+ Invoice For IB</button>
+            <button className="btn btn-primary my-1"  style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Invoice For IB &nbsp;{<GlowingCircleIcon/>}</button>
             </li>
           </ul>
         </div>
@@ -174,7 +175,7 @@ borderRadius: "12px"
                         <td>{invoice.invoiceAmount}</td>
                         <td>{invoice.status}</td>
                         <td>
-                          <button className="btn btn-primary btn-sm"><Link className="nav-link" to ="/View">View</Link></button>
+                          <button className="btn btn-primary btn-sm mx-1 my-1"><Link className="nav-link" to ="/View">View</Link></button>
                           <button className="btn btn-success btn-sm">Payment</button>
                         </td>
                       </tr>

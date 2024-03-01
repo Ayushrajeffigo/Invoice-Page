@@ -1,0 +1,18 @@
+.glowing-circle {
+    display: inline-block;
+    width: 50px; /* adjust size as needed */
+    height: 50px; /* adjust size as needed */
+    border-radius: 50%; /* creates circle */
+    background-color:#288cab; /* background color */
+    box-shadow: 0 0 0px #288cab, 0 0 0px #288cab, 0 0 30px #288cab; /* 3D glowing effect */
+}
+
+.glowing-circle i {
+    font-size: 24px; /* adjust icon size */
+    color: whitesmoke; /* icon color */
+    line-height: 50px; /* centering the icon vertically */
+    text-align: center; /* centering the icon horizontally */
+}
+.nav {
+    color:"#a9e5f7";
+}
