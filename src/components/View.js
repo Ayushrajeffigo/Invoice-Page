@@ -6,9 +6,9 @@ import Footer from './Footer'
 export default function View() {
   return (
     <>
-    <div class=" align-items-start" style={{ display: "inline" }}>
+    <div class=" align-items-start" style={{ position:"absolute"}}>
     <UpperBorder/>
-      <div style={{ display: "inline" }}>
+      <div style={{ display: "absolute" }}>
         <Border />
         
         Invoice View 

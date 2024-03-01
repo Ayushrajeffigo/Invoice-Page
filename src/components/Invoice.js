@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import Border from './Border';
 import UpperBorder from './UpperBorder';
 import Footer from './Footer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Button } from '@mui/material'; // Import Material-UI components
 import GlowingCircleIcon from './GlowingCircleIcon';
 const invoices = [
   {
@@ -55,140 +59,137 @@ const invoices = [
 export default function Invoice(props) {
   return (
     <>
-     <div >
-      <UpperBorder/>
-    </div>
-    <div><Border/></div>
-   
-    
-    <div style={{
-      /* Frame 1000005186 */
-
-position: "absolute",
-width: "100vw",
-height: "900px",
-left: "128px",
-top: "182px",
-
-/* White */
-backgroundColor:"white",
-mixBlendMode: "normal",
-/* 123 */
-boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.02)",
-borderRadius: "12px"
-
-
-    }}>
-     
-      <nav className="navbar navbar-expand-lg navbar-light nav " >
-        <Link className="navbar-brand" to="/">Invoice App</Link>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav">
-            <li className="nav-item active">
-              <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/">All Invoices</Link>
-            </li>
-            {/* <li className="nav-item dropdown">
-              <Link className="nav-link dropdown-toggle" to="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Status
-              </Link>
-              <ul class="dropdown-menu">
-                <li><Link className="dropdown-item" to="/">All</Link></li>
-                <Link className="dropdown-item" to="/">Closed</Link>
-                <Link className="dropdown-item" to="/">Rejected</Link>
-                <Link className="dropdown-item" to="/">Approved</Link>
-              </ul>
-            </li> */}
-             <li class="nav-item dropdown">
-          <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          All Status
-          </Link>
-          <ul class="dropdown-menu">
-            <li><Link class="dropdown-item" to="/">All</Link></li>
-            <li><Link class="dropdown-item" to="/">Closed</Link></li>
-            <li><Link class="dropdown-item" to="/">Rejected</Link></li>
-            <li><Link class="dropdown-item" to="/">Approved</Link></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Select
-          </Link>
-          <ul class="dropdown-menu">
-            <li><Link class="dropdown-item" to="/">All</Link></li>
-            <li><Link class="dropdown-item" to="/">Closed</Link></li>
-            <li><Link class="dropdown-item" to="/">Rejected</Link></li>
-            <li><Link class="dropdown-item" to="/">Approved</Link></li>
+      <div>
+        <UpperBorder />
+      </div>
+      <div>
+        <Border />
+      </div>
+      <div style={{
+        position: "absolute",
+        width: "100vw",
+        height: "900px",
+        left: "128px",
+        top: "182px",
+        backgroundColor: "white",
+        mixBlendMode: "normal",
+        boxShadow: "0px 1px 10px rgba(0, 0, 0, 0.02)",
+        borderRadius: "12px"
+      }}>
+        <nav className="navbar navbar-expand-lg navbar-light nav" >
+          <Link className="navbar-brand" to="/">Invoice App</Link>
+          <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarNav">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" to="/">All Invoices</Link>
+              </li>
+              <li class="nav-item dropdown">
+                <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  All Status
+                </Link>
+                <ul class="dropdown-menu">
+                  <li><Link class="dropdown-item" to="/">All</Link></li>
+                  <li><Link class="dropdown-item" to="/">Closed</Link></li>
+                  <li><Link class="dropdown-item" to="/">Rejected</Link></li>
+                  <li><Link class="dropdown-item" to="/">Approved</Link></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown">
+                <Link class="nav-link dropdown-toggle" to="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Select
+                </Link>
+                <ul class="dropdown-menu">
+                  <li><Link class="dropdown-item" to="/">All</Link></li>
+                  <li><Link class="dropdown-item" to="/">Closed</Link></li>
+                  <li><Link class="dropdown-item" to="/">Rejected</Link></li>
+                  <li><Link class="dropdown-item" to="/">Approved</Link></li>
+                </ul>
+              </li>
+              <li className="nav-item">
+                <div className="nav-link">
+                  <i className="fas fa-search"></i>
+            <div>
+                  <input
+                      type="text"
+                      placeholder="Search..."
+                      style={{
+                        backgroundColor: "white",
+                        borderRadius: "45px",
+                        color: "#288cab",
+                        border: "2px solid white",
+                        width: "100%",
+                        height: "50px",
+                        paddingLeft: "100px" // Adjust padding to accommodate the icon
+                      }}
+                    />
+                    <FontAwesomeIcon icon={faSearch} style={{ position: "relative", left: "90%", top: "auto", transform: "translateY(-230%)" }} />
+          </div>
+                </div>
+              </li>
+              <li className="nav-item mb-1">
+                <button className="btn  my-1" style={{ backgroundColor: "whitesmoke", borderRadius: "45px", color: "#288cab" }}>Direct Invoice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<GlowingCircleIcon />}</button>
+              </li>
+              <li className="mb-2 mb-2">
+                <button className="btn mx-3 my-1" style={{ backgroundColor: "whitesmoke", borderRadius: "45px", color: "#288cab" }}>Invoice For Grn &nbsp;{<GlowingCircleIcon />}</button>
+              </li>
+              <li className="nav-item mb-3">
+                <button className="btn  my-1" style={{ backgroundColor: "whitesmoke", borderRadius: "45px", color: "#288cab" }}>Invoice For IB &nbsp;{<GlowingCircleIcon />}</button>
+              </li>
             </ul>
-            </li>
-            <li className="nav-item">
-              <div className="nav-link">
-                <i className="fas fa-search"></i>
-                <input type="text" placeholder="Search..." />
-              </div>
-            </li>
-            <li className="nav-item mb-1">
-            <button className="btn  my-1" style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Direct Invoice&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{<GlowingCircleIcon/>}</button>
-            </li>
-            <li className="mb-2 mb-2">
-            <button className="btn btn-primary mx-3 my-1"  style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Invoice For Grn &nbsp;{<GlowingCircleIcon/>}</button>
-            </li>
-            <li className="nav-item mb-3">
-            <button className="btn btn-primary my-1"  style={{backgroundColor:"whitesmoke",borderRadius:"45px",color:"#288cab"}}>Invoice For IB &nbsp;{<GlowingCircleIcon/>}</button>
-            </li>
-          </ul>
-        </div>
-      </nav>
-      <div className="container mt-4">
-        <div className="row">
-          <div className="col-md-12">
-            <div className="card">
-           
-                    
-              <div className="card-body">
-                <table className="table table-bordered">
-                  <thead>
-                    <tr>
-                      <th>Supplier Invoice Date</th>
-                      <th>Supplier Invoice No</th>
-                      <th>PO Number</th>
-                      <th>Business Unit</th>
-                      <th>Vendor</th>
-                      <th>Invoice Amount (INR)</th>
-                      <th>Status</th>
-                      <th>Actions</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {invoices.map((invoice, index) => (
-                      <tr key={index}>
-                        <td>{invoice.supplierInvoiceDate}</td>
-                        <td>{invoice.supplierInvoiceNo}</td>
-                        <td>{invoice.poNumber}</td>
-                        <td>{invoice.businessUnit}</td>
-                        <td>{invoice.vendor}</td>
-                        <td>{invoice.invoiceAmount}</td>
-                        <td>{invoice.status}</td>
-                        <td>
-                          <button className="btn btn-primary btn-sm mx-1 my-1"><Link className="nav-link" to ="/View">View</Link></button>
-                          <button className="btn btn-success btn-sm">Payment</button>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
+          </div>
+        </nav>
+        <div className="container mt-4" style={{ position: "absolute" }}>
+          <div className="row">
+            <div className="col-md-12">
+              <div className="card">
+                <div className="card-body">
+                  <TableContainer>
+                    <Table sx={{ minWidth: 650 }} aria-label="simple table">
+                      <TableHead>
+                        <TableRow>
+                          <TableCell>Supplier Invoice Date</TableCell>
+                          <TableCell>Supplier Invoice No</TableCell>
+                          <TableCell>PO Number</TableCell>
+                          <TableCell>Business Unit</TableCell>
+                          <TableCell>Vendor</TableCell>
+                          <TableCell>Invoice Amount (INR)</TableCell>
+                          <TableCell>Status</TableCell>
+                          <TableCell>Actions</TableCell>
+                        </TableRow>
+                      </TableHead>
+                      <TableBody>
+                        {invoices.map((invoice, index) => (
+                          <TableRow key={index}>
+                            <TableCell>{invoice.supplierInvoiceDate}</TableCell>
+                            <TableCell>{invoice.supplierInvoiceNo}</TableCell>
+                            <TableCell>{invoice.poNumber}</TableCell>
+                            <TableCell>{invoice.businessUnit}</TableCell>
+                            <TableCell>{invoice.vendor}</TableCell>
+                            <TableCell>{invoice.invoiceAmount}</TableCell>
+                            <TableCell>{invoice.status}</TableCell>
+                            <TableCell>
+                              <Button variant="contained" color="primary" component={Link} to="/View" className="mx-1 my-1">View</Button>
+                              <Button variant="contained" color="success">Payment</Button>
+                            </TableCell>
+                          </TableRow>
+                        ))}
+                      </TableBody>
+                    </Table>
+                  </TableContainer>
+                </div>
               </div>
             </div>
           </div>
         </div>
+       
       </div>
-    </div>
-    <Footer/>
-</>
+      <Footer/>
+    </>
   );
 }
