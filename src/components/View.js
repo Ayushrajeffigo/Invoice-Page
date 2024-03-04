@@ -8,9 +8,8 @@ export default function View() {
     <>
     <div class=" align-items-start" style={{ position:"absolute"}}>
     <UpperBorder/>
-      <div style={{ display: "absolute" }}>
+      <div style={{ position: "absolute" }}>
         <Border />
-        
         Invoice View 
     </div>
     <Footer/>

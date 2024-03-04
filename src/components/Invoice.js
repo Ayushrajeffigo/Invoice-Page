@@ -116,19 +116,22 @@ export default function Invoice(props) {
                   <i className="fas fa-search"></i>
             <div>
                   <input
+                      className=''
                       type="text"
                       placeholder="Search..."
                       style={{
-                        backgroundColor: "white",
-                        borderRadius: "45px",
+                       
+                      
                         color: "#288cab",
                         border: "2px solid white",
                         width: "100%",
-                        height: "50px",
-                        paddingLeft: "100px" // Adjust padding to accommodate the icon
+                        height: "40px",
+                        paddingLeft: "100px",
+                         // Adjust padding to accommodate the icon
+                         backgroundColor: "whitesmoke", borderRadius: "45px" 
                       }}
                     />
-                    <FontAwesomeIcon icon={faSearch} style={{ position: "relative", left: "90%", top: "auto", transform: "translateY(-230%)" }} />
+                    <FontAwesomeIcon className='glowing-circle' icon={faSearch} style={{ fontSize:"50px",backgroundColor:"#288cab",position: "relative", left: "80%", top: "auto", transform: "translateY(-95%)",borderRadius:"45px",width:"fit-content" }} />
           </div>
                 </div>
               </li>
@@ -174,8 +177,7 @@ export default function Invoice(props) {
                             <TableCell>{invoice.invoiceAmount}</TableCell>
                             <TableCell>{invoice.status}</TableCell>
                             <TableCell>
-                              <Button variant="contained" color="primary" component={Link} to="/View" className="mx-1 my-1">View</Button>
-                              <Button variant="contained" color="success">Payment</Button>
+                              <Button variant="contained" color="primary" component={Link} to="/View" className="mx-1 my-1">View and Payment</Button>
                             </TableCell>
                           </TableRow>
                         ))}
