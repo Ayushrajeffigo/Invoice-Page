@@ -1,5 +1,5 @@
 import React from 'react';
-import './GlowingCircleIcon.css'; // Import your CSS file
+import './GlowingCircleIcon.css'; // Import CSS file
 
 const GlowingCircleIcon = () => {
     return (

@@ -120,14 +120,11 @@ export default function Invoice(props) {
                       type="text"
                       placeholder="Search..."
                       style={{
-                       
-                      
                         color: "#288cab",
                         border: "2px solid white",
                         width: "100%",
                         height: "40px",
                         paddingLeft: "100px",
-                         // Adjust padding to accommodate the icon
                          backgroundColor: "whitesmoke", borderRadius: "45px" 
                       }}
                     />
@@ -177,7 +174,7 @@ export default function Invoice(props) {
                             <TableCell>{invoice.invoiceAmount}</TableCell>
                             <TableCell>{invoice.status}</TableCell>
                             <TableCell>
-                              <Button variant="contained" color="primary" component={Link} to="/View" className="mx-1 my-1">View and Payment</Button>
+                              <Button   component={Link} to="/View" className="mx-1 my-1">View and Payment</Button>
                             </TableCell>
                           </TableRow>
                         ))}
